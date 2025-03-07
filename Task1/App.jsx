@@ -1,4 +1,5 @@
 import React from "react";
+import './App.css'
 import UseCard from "./UseCard";
 const App = () => {
   return (
