@@ -1,0 +1,26 @@
+// pages/index.js
+import Link from 'next/link';
+
+const products = [
+  { id: 1, name: 'T-Shirt', price: '$20', image: '/images/tshirt.jpg' },
+  { id: 2, name: 'Coffee Mug', price: '$10', image: '/images/mug.jpg' },
+  // Add more products as needed
+];
+
+export default function Home() {
+  return (
+    <div>
+      <h1>Product Showcase</h1>
+      <ul>
+        {products.map(product => (
+          <li key={product.id}>
+            <h2>{product.name}</h2>
+            <p>{product.price}</p>
+            <img src={product.image} alt={product.name} />
+            <Link href={`/product/${product.id}`}>View Details</Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
